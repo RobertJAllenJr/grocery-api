@@ -44,6 +44,15 @@ class ItemOut(BaseModel):
 # ----------------------------
 # Routes
 # ----------------------------
+
+@app.get("/")
+def root():
+    return {
+        "message": "Grocery List API is running",
+        "docs": "/redoc",
+        "health": "/health"
+    }
+
 @app.get("/health")
 def health():
     return {"status": "ok"}
